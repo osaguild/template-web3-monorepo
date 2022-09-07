@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react'
 import { Text, Box, Wrap, WrapItem, Center } from '@chakra-ui/react'
-import { useContents } from '../../hooks/useContents'
+import { useContents } from '../../hooks/Contents'
 
 const Content: FunctionComponent = () => {
   const contents = useContents()
@@ -12,7 +12,7 @@ const Content: FunctionComponent = () => {
       <Wrap spacing="30px" justify="center" my="50">
         {contents ? (
           contents.map((e, i) => (
-            <WrapItem border="2px" className="web3-background" data-testid="item-1" key={i}>
+            <WrapItem border="2px" className="web3-background" data-testid={`item-${i}`} key={i}>
               <Center w="300px" h="300px">
                 {e}
               </Center>

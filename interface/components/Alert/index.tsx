@@ -1,6 +1,6 @@
 import { FunctionComponent, useMemo } from 'react'
 import { Alert as ChakraAlert, AlertIcon } from '@chakra-ui/react'
-import { useAlertContext } from '../../hooks/useAlertContext'
+import { useAlertContext } from '../../hooks/AlertContext'
 
 const Alert: FunctionComponent = () => {
   const { alert, setAlert } = useAlertContext()

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { providers } from 'ethers'
-import { Message__factory } from '../typechain-types'
-import { address } from '../config/address'
+import { Message__factory } from '../../typechain-types'
+import { address } from '../../config/address'
 
 const useContents = () => {
   const [contents, setContents] = useState<string[]>([])
