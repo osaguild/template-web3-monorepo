@@ -7,10 +7,8 @@ import { address } from '../../config/address'
 const useContents = () => {
   const [contents, setContents] = useState<string[]>([])
   const { library } = useWeb3React<providers.Web3Provider>()
-  console.log('useContents is called')
 
   useEffect(() => {
-    console.log('library is ', library)
     if (library) {
       const contract = Message__factory.connect(address.MESSAGE_CONTRACT, library.getSigner())
       contract.getMessageLength().then((length) => {
@@ -19,7 +17,6 @@ const useContents = () => {
         Promise.all(promises).then((message) => setContents(message))
       })
     }
-    console.log('contents', contents)
   }, [library])
 
   return contents
