@@ -8,15 +8,10 @@ async function main() {
   console.log('deploying contract with the account:', deployer.address)
   console.log('account balance:', balance)
 
-  // token
-  const tokenFactory = await ethers.getContractFactory('Token')
-  const token = await tokenFactory.deploy()
-  console.log('Token address:', token.address)
-
-  // manager
-  const managerFactory = await ethers.getContractFactory('Manager')
-  const manager = await managerFactory.deploy(deployer.address)
-  console.log('Manager address:', manager.address)
+  // message
+  const messageFactory = await ethers.getContractFactory('Message')
+  const message = await messageFactory.deploy(deployer.address)
+  console.log('Message address:', message.address)
 }
 
 main()
