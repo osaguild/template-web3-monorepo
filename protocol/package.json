@@ -7,9 +7,10 @@
   },
   "license": "MIT",
   "scripts": {
-    "compile": "run-s compile:clean compile:build",
+    "compile": "run-s compile:clean compile:build compile:copy",
     "compile:clean": "hardhat clean",
     "compile:build": "hardhat compile",
+    "compile:copy": "cp -rf ./typechain-types ../interface",
     "lint": "run-s lint:solhint lint:eslint lint:prettier",
     "lint:solhint": "solhint 'contracts/**/*.sol' && prettier -c 'contracts/**/*.sol'",
     "lint:eslint": "eslint --fix --ext .js,.ts",
