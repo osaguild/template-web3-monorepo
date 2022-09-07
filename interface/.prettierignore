@@ -3,3 +3,4 @@
 node_modules
 public
 .swc
+typechain-types
